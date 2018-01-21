@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		44061FD42012B2E200184958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44061FD32012B2E200184958 /* AppDelegate.swift */; };
-		44061FD62012B2E200184958 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44061FD52012B2E200184958 /* ViewController.swift */; };
 		44061FD92012B2E300184958 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44061FD72012B2E300184958 /* Main.storyboard */; };
 		44061FDB2012B2E300184958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44061FDA2012B2E300184958 /* Assets.xcassets */; };
-		44061FDE2012B2E300184958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44061FDC2012B2E300184958 /* LaunchScreen.storyboard */; };
+		44548FFB20150E34003BFCD8 /* DesignableHomeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44548FFA20150E34003BFCD8 /* DesignableHomeBtn.swift */; };
+		44BD97DC2012C40400D406CC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD97DB2012C40400D406CC /* HomeViewController.swift */; };
+		773646EBAB8F0F7C99132815 /* Pods_VocaPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5250E265A4A88D4B2FC47582 /* Pods_VocaPro.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		44061FD02012B2E200184958 /* VocaPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VocaPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44061FD32012B2E200184958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44061FD52012B2E200184958 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		44061FD82012B2E300184958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44061FDA2012B2E300184958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		44061FDD2012B2E300184958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44061FDF2012B2E300184958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44548FFA20150E34003BFCD8 /* DesignableHomeBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableHomeBtn.swift; sourceTree = "<group>"; };
+		44BD97DB2012C40400D406CC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5250E265A4A88D4B2FC47582 /* Pods_VocaPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VocaPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CED76C4DB5B38F8EE1B18B0 /* Pods-VocaPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VocaPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VocaPro/Pods-VocaPro.debug.xcconfig"; sourceTree = "<group>"; };
+		8202A907E76B2992C57BFCC9 /* Pods-VocaPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VocaPro.release.xcconfig"; path = "Pods/Target Support Files/Pods-VocaPro/Pods-VocaPro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				773646EBAB8F0F7C99132815 /* Pods_VocaPro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				44061FD22012B2E200184958 /* VocaPro */,
 				44061FD12012B2E200184958 /* Products */,
+				B48902CA9CD8E36A733B76FF /* Pods */,
+				D84C7CA8352E8BAB3657ECCF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +62,54 @@
 			isa = PBXGroup;
 			children = (
 				44061FD32012B2E200184958 /* AppDelegate.swift */,
-				44061FD52012B2E200184958 /* ViewController.swift */,
-				44061FD72012B2E300184958 /* Main.storyboard */,
+				44BD97DA2012C24E00D406CC /* Controllers */,
+				44BD97D92012C21B00D406CC /* Views */,
 				44061FDA2012B2E300184958 /* Assets.xcassets */,
-				44061FDC2012B2E300184958 /* LaunchScreen.storyboard */,
 				44061FDF2012B2E300184958 /* Info.plist */,
+				44548FFE20150E61003BFCD8 /* Plugins */,
 			);
 			path = VocaPro;
+			sourceTree = "<group>";
+		};
+		44548FFE20150E61003BFCD8 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				44548FFA20150E34003BFCD8 /* DesignableHomeBtn.swift */,
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
+		44BD97D92012C21B00D406CC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				44061FD72012B2E300184958 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		44BD97DA2012C24E00D406CC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44BD97DB2012C40400D406CC /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B48902CA9CD8E36A733B76FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7CED76C4DB5B38F8EE1B18B0 /* Pods-VocaPro.debug.xcconfig */,
+				8202A907E76B2992C57BFCC9 /* Pods-VocaPro.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D84C7CA8352E8BAB3657ECCF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5250E265A4A88D4B2FC47582 /* Pods_VocaPro.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +119,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44061FE22012B2E300184958 /* Build configuration list for PBXNativeTarget "VocaPro" */;
 			buildPhases = (
+				7DFBFCDB792CBBB0A8DDCB12 /* [CP] Check Pods Manifest.lock */,
 				44061FCC2012B2E200184958 /* Sources */,
 				44061FCD2012B2E200184958 /* Frameworks */,
 				44061FCE2012B2E200184958 /* Resources */,
+				709C6D7D6C6E5DC1117B5208 /* [CP] Embed Pods Frameworks */,
+				032A2F6D1112D126B5A3F7C8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,7 +174,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44061FDE2012B2E300184958 /* LaunchScreen.storyboard in Resources */,
 				44061FDB2012B2E300184958 /* Assets.xcassets in Resources */,
 				44061FD92012B2E300184958 /* Main.storyboard in Resources */,
 			);
@@ -131,13 +181,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		032A2F6D1112D126B5A3F7C8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VocaPro/Pods-VocaPro-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		709C6D7D6C6E5DC1117B5208 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VocaPro/Pods-VocaPro-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VocaPro/Pods-VocaPro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7DFBFCDB792CBBB0A8DDCB12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VocaPro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		44061FCC2012B2E200184958 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44061FD62012B2E200184958 /* ViewController.swift in Sources */,
+				44548FFB20150E34003BFCD8 /* DesignableHomeBtn.swift in Sources */,
 				44061FD42012B2E200184958 /* AppDelegate.swift in Sources */,
+				44BD97DC2012C40400D406CC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,14 +263,6 @@
 				44061FD82012B2E300184958 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		44061FDC2012B2E300184958 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				44061FDD2012B2E300184958 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -272,6 +377,7 @@
 		};
 		44061FE32012B2E300184958 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CED76C4DB5B38F8EE1B18B0 /* Pods-VocaPro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +393,7 @@
 		};
 		44061FE42012B2E300184958 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8202A907E76B2992C57BFCC9 /* Pods-VocaPro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

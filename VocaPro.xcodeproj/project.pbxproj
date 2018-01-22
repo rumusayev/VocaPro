@@ -11,6 +11,7 @@
 		44061FD92012B2E300184958 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44061FD72012B2E300184958 /* Main.storyboard */; };
 		44061FDB2012B2E300184958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44061FDA2012B2E300184958 /* Assets.xcassets */; };
 		44548FFB20150E34003BFCD8 /* DesignableHomeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44548FFA20150E34003BFCD8 /* DesignableHomeBtn.swift */; };
+		445490002015F165003BFCD8 /* CreateASheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44548FFF2015F165003BFCD8 /* CreateASheetViewController.swift */; };
 		44BD97DC2012C40400D406CC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD97DB2012C40400D406CC /* HomeViewController.swift */; };
 		773646EBAB8F0F7C99132815 /* Pods_VocaPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5250E265A4A88D4B2FC47582 /* Pods_VocaPro.framework */; };
 /* End PBXBuildFile section */
@@ -22,6 +23,7 @@
 		44061FDA2012B2E300184958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44061FDF2012B2E300184958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44548FFA20150E34003BFCD8 /* DesignableHomeBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableHomeBtn.swift; sourceTree = "<group>"; };
+		44548FFF2015F165003BFCD8 /* CreateASheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateASheetViewController.swift; sourceTree = "<group>"; };
 		44BD97DB2012C40400D406CC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5250E265A4A88D4B2FC47582 /* Pods_VocaPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VocaPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CED76C4DB5B38F8EE1B18B0 /* Pods-VocaPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VocaPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VocaPro/Pods-VocaPro.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				44BD97DB2012C40400D406CC /* HomeViewController.swift */,
+				44548FFF2015F165003BFCD8 /* CreateASheetViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				445490002015F165003BFCD8 /* CreateASheetViewController.swift in Sources */,
 				44548FFB20150E34003BFCD8 /* DesignableHomeBtn.swift in Sources */,
 				44061FD42012B2E200184958 /* AppDelegate.swift in Sources */,
 				44BD97DC2012C40400D406CC /* HomeViewController.swift in Sources */,

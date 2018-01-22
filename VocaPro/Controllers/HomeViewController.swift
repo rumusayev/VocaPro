@@ -35,4 +35,11 @@ class HomeViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
+    @IBAction func onCreateSheetButtonAction(_ sender: Any)
+    {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "CreateASheetViewController") as? CreateASheetViewController
+        {
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

@@ -10,9 +10,13 @@
 		44061FD42012B2E200184958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44061FD32012B2E200184958 /* AppDelegate.swift */; };
 		44061FD92012B2E300184958 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44061FD72012B2E300184958 /* Main.storyboard */; };
 		44061FDB2012B2E300184958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44061FDA2012B2E300184958 /* Assets.xcassets */; };
+		444B9C1C201B219700462420 /* DesignableAddWordModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B9C1B201B219700462420 /* DesignableAddWordModalView.swift */; };
+		444B9C1E201B5AD300462420 /* WordSaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444B9C1D201B5AD300462420 /* WordSaveViewController.swift */; };
 		44548FFB20150E34003BFCD8 /* DesignableHomeBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44548FFA20150E34003BFCD8 /* DesignableHomeBtn.swift */; };
 		445490002015F165003BFCD8 /* CreateASheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44548FFF2015F165003BFCD8 /* CreateASheetViewController.swift */; };
 		44BD97DC2012C40400D406CC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BD97DB2012C40400D406CC /* HomeViewController.swift */; };
+		44E6685220164873009F5B64 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E6685120164873009F5B64 /* Word.swift */; };
+		44E66855201649B8009F5B64 /* Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E66854201649B8009F5B64 /* Sheet.swift */; };
 		773646EBAB8F0F7C99132815 /* Pods_VocaPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5250E265A4A88D4B2FC47582 /* Pods_VocaPro.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,9 +26,13 @@
 		44061FD82012B2E300184958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		44061FDA2012B2E300184958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44061FDF2012B2E300184958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		444B9C1B201B219700462420 /* DesignableAddWordModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableAddWordModalView.swift; sourceTree = "<group>"; };
+		444B9C1D201B5AD300462420 /* WordSaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordSaveViewController.swift; sourceTree = "<group>"; };
 		44548FFA20150E34003BFCD8 /* DesignableHomeBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableHomeBtn.swift; sourceTree = "<group>"; };
 		44548FFF2015F165003BFCD8 /* CreateASheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateASheetViewController.swift; sourceTree = "<group>"; };
 		44BD97DB2012C40400D406CC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		44E6685120164873009F5B64 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		44E66854201649B8009F5B64 /* Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sheet.swift; sourceTree = "<group>"; };
 		5250E265A4A88D4B2FC47582 /* Pods_VocaPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VocaPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CED76C4DB5B38F8EE1B18B0 /* Pods-VocaPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VocaPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VocaPro/Pods-VocaPro.debug.xcconfig"; sourceTree = "<group>"; };
 		8202A907E76B2992C57BFCC9 /* Pods-VocaPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VocaPro.release.xcconfig"; path = "Pods/Target Support Files/Pods-VocaPro/Pods-VocaPro.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,14 +71,24 @@
 		44061FD22012B2E200184958 /* VocaPro */ = {
 			isa = PBXGroup;
 			children = (
+				444B9C1A201B215400462420 /* IBDesignables */,
 				44061FD32012B2E200184958 /* AppDelegate.swift */,
 				44BD97DA2012C24E00D406CC /* Controllers */,
 				44BD97D92012C21B00D406CC /* Views */,
 				44061FDA2012B2E300184958 /* Assets.xcassets */,
 				44061FDF2012B2E300184958 /* Info.plist */,
 				44548FFE20150E61003BFCD8 /* Plugins */,
+				44E66853201649A4009F5B64 /* Models */,
 			);
 			path = VocaPro;
+			sourceTree = "<group>";
+		};
+		444B9C1A201B215400462420 /* IBDesignables */ = {
+			isa = PBXGroup;
+			children = (
+				444B9C1B201B219700462420 /* DesignableAddWordModalView.swift */,
+			);
+			path = IBDesignables;
 			sourceTree = "<group>";
 		};
 		44548FFE20150E61003BFCD8 /* Plugins */ = {
@@ -94,8 +112,18 @@
 			children = (
 				44BD97DB2012C40400D406CC /* HomeViewController.swift */,
 				44548FFF2015F165003BFCD8 /* CreateASheetViewController.swift */,
+				444B9C1D201B5AD300462420 /* WordSaveViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		44E66853201649A4009F5B64 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				44E6685120164873009F5B64 /* Word.swift */,
+				44E66854201649B8009F5B64 /* Sheet.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B48902CA9CD8E36A733B76FF /* Pods */ = {
@@ -252,8 +280,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				445490002015F165003BFCD8 /* CreateASheetViewController.swift in Sources */,
+				444B9C1E201B5AD300462420 /* WordSaveViewController.swift in Sources */,
 				44548FFB20150E34003BFCD8 /* DesignableHomeBtn.swift in Sources */,
+				44E6685220164873009F5B64 /* Word.swift in Sources */,
+				44E66855201649B8009F5B64 /* Sheet.swift in Sources */,
 				44061FD42012B2E200184958 /* AppDelegate.swift in Sources */,
+				444B9C1C201B219700462420 /* DesignableAddWordModalView.swift in Sources */,
 				44BD97DC2012C40400D406CC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

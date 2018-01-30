@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol AlertCustomWordAddingDelegate {
+    func onWordSaved(_ word: Dictionary<String, String>)
+}
+
 class WordSaveViewController: UIViewController {
     
     var newWord = [String]()
+    var selectedWord = [String: String]()
 
     @IBOutlet weak var wordTField: UITextField!
     
@@ -22,6 +27,8 @@ class WordSaveViewController: UIViewController {
     
     @IBOutlet var modalPage: UIView!
     
+    var delegate: AlertCustomWordAddingDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +36,14 @@ class WordSaveViewController: UIViewController {
     }
     
     func uiUpdatesForPage(){
+        
+        
+        if (!selectedWord.isEmpty){
+            wordTField.text =  selectedWord["word"]
+            translationTField.text =  selectedWord["translation"]
+            trranscriptionTField.text =  selectedWord["transcription"]
+            exampleTView.text =  selectedWord["example"]
+        }
         
         generateBorderForTextField(textfield: wordTField)
         generateBorderForTextField(textfield: translationTField)
@@ -42,30 +57,37 @@ class WordSaveViewController: UIViewController {
         
         bottomBorder.layer.backgroundColor = UIColor(red:0.41, green:0.29, blue:0.39, alpha:1.0).cgColor
         
+        
         (textfield as AnyObject).addSubview(bottomBorder)
     }
-
+    
     @IBAction func cancelPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func savePressed(_ sender: UIButton) {
         
-        let createASheetC = storyboard?.instantiateViewController(withIdentifier: "CreateASheetViewController") as! CreateASheetViewController
         
-        createASheetC.temp.append([
-            "word": wordTField.text!,
-            "translation": translationTField.text!,
-            "transcription" : trranscriptionTField.text!,
-            "example": exampleTView.text!
-            ])
-    
-        dismiss(animated: true, completion: nil)
+        if (wordTField.text?.isEmpty)! || (translationTField.text?.isEmpty)! || (trranscriptionTField.text?.isEmpty)! || (exampleTView.text?.isEmpty)!
+        {
+            
+        } else {
+            
+            let wordData = [
+                "word": wordTField.text!,
+                "translation": translationTField.text!,
+                "transcription" : trranscriptionTField.text!,
+                "example": exampleTView.text!
+            ]
+            
+            if let del = delegate
+            {
+                del.onWordSaved(wordData)
+            }
+            
+            dismiss(animated: true, completion: nil)
+        }
         
-    }
-    
-    @IBAction func unwind(_ sender: UIStoryboardSegue){
-        print("This is unwinding test")
     }
     
 }

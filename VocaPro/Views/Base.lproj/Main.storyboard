@@ -198,12 +198,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="na2-LZ-Oyt" userLabel="Words Table View">
-                                <rect key="frame" x="55" y="286" width="320" height="348"/>
+                                <rect key="frame" x="55" y="286" width="320" height="381"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="348" id="mTN-8K-p4q"/>
-                                    <constraint firstAttribute="width" constant="320" id="yRG-c2-Aj2"/>
-                                </constraints>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="rAX-9M-BQ2">
                                     <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -217,7 +213,7 @@
                                                 <color key="titleColor" red="0.98431372549019602" green="0.98039215686274506" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
-                                                <segue destination="Nc8-HW-Mc3" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="B4y-w2-Xls"/>
+                                                <action selector="addWordPressed:" destination="PmJ-qv-dra" eventType="touchUpInside" id="hwD-1k-m91"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -328,13 +324,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.35136708617210388" green="0.22033005952835083" blue="0.33165454864501953" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="na2-LZ-Oyt" firstAttribute="leading" secondItem="Fe8-NX-Akp" secondAttribute="leading" constant="55" id="4rd-yc-9gG"/>
                             <constraint firstItem="lVK-Fj-oHE" firstAttribute="top" secondItem="Fe8-NX-Akp" secondAttribute="top" constant="45" id="8Hz-70-qpH"/>
                             <constraint firstItem="lVK-Fj-oHE" firstAttribute="leading" secondItem="Fe8-NX-Akp" secondAttribute="leading" constant="55" id="FV4-b1-kgw"/>
-                            <constraint firstItem="na2-LZ-Oyt" firstAttribute="leading" secondItem="Fe8-NX-Akp" secondAttribute="leading" constant="55" id="K0T-Hx-nyy"/>
-                            <constraint firstItem="Fe8-NX-Akp" firstAttribute="bottom" secondItem="na2-LZ-Oyt" secondAttribute="bottom" constant="33" id="LRy-bV-LXK"/>
+                            <constraint firstItem="na2-LZ-Oyt" firstAttribute="trailing" secondItem="Fe8-NX-Akp" secondAttribute="trailing" id="b7X-qe-Jxc"/>
+                            <constraint firstItem="na2-LZ-Oyt" firstAttribute="top" secondItem="lVK-Fj-oHE" secondAttribute="bottom" constant="73" id="bf2-wS-xSv"/>
+                            <constraint firstItem="Fe8-NX-Akp" firstAttribute="bottom" secondItem="na2-LZ-Oyt" secondAttribute="bottom" id="emq-rq-0Xf"/>
                             <constraint firstAttribute="trailing" secondItem="lVK-Fj-oHE" secondAttribute="trailing" id="hgT-8j-faa"/>
-                            <constraint firstItem="na2-LZ-Oyt" firstAttribute="top" secondItem="lVK-Fj-oHE" secondAttribute="bottom" constant="73" id="loP-zk-qZ9"/>
-                            <constraint firstItem="na2-LZ-Oyt" firstAttribute="trailing" secondItem="Fe8-NX-Akp" secondAttribute="trailing" id="o7e-rQ-7Ys"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fe8-NX-Akp"/>
                     </view>
@@ -421,7 +417,6 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="savePressed:" destination="Nc8-HW-Mc3" eventType="touchUpInside" id="QBL-Ud-wbG"/>
-                                                            <segue destination="b7J-Vw-HFp" kind="unwind" unwindAction="unwind:" id="Sd3-Gz-sIC"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -461,7 +456,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bdk-VS-XIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="b7J-Vw-HFp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2160.8000000000002" y="-35.532233883058474"/>
         </scene>

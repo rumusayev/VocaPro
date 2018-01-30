@@ -10,12 +10,13 @@ import UIKit
 import RealmSwift
 import SwipeCellKit
 
-class CreateASheetViewController: UIViewController, UITableViewDataSource, SwipeTableViewCellDelegate {
+
+
+class CreateASheetViewController: UIViewController, UITableViewDataSource, SwipeTableViewCellDelegate, AlertCustomWordAddingDelegate {
     
     let realm = try! Realm()
     
-    var words = [[String]]()
-    var temp = [[String: String]]()
+    var words = [[String: String]]()
     
     @IBOutlet weak var nameOfSheetTF: UITextField!
     @IBOutlet weak var timeFrameTF: UITextField!
@@ -25,16 +26,6 @@ class CreateASheetViewController: UIViewController, UITableViewDataSource, Swipe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        temp = [[
-            "word": "Bye",
-            "translation": "Translation",
-            "transcription" : "Criptiones",
-            "example": "Here I Am"
-            ]]
-        
-        
-//        wordsappend(["word": "word", "translation": "trans"])
         
         tableViewUI()
         
@@ -51,16 +42,16 @@ class CreateASheetViewController: UIViewController, UITableViewDataSource, Swipe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return temp.count
+        return words.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = wordsTableView.dequeueReusableCell(withIdentifier: "cellWord")  as! SwipeTableViewCell
         
-        print(temp[indexPath.row])
+        print(words[indexPath.row])
         
-        cell.textLabel?.text = temp[indexPath.row]["word"]
+        cell.textLabel?.text = words[indexPath.row]["word"]
         
         cell.delegate = self
         
@@ -83,7 +74,7 @@ class CreateASheetViewController: UIViewController, UITableViewDataSource, Swipe
         deleteAction.image = UIImage(named: "delete-white-icon")
         
         let editAction = SwipeAction(style: .default, title: "Edit") { action, indexPath in
-            // handle action by updating model with deletion
+            self.showWordModal(self.words[indexPath.row])
         }
         
         // customize the action appearance
@@ -152,11 +143,28 @@ class CreateASheetViewController: UIViewController, UITableViewDataSource, Swipe
         
     }
     
+    @IBAction func addWordPressed(_ sender: UIButton)
+    {
+        showWordModal()
+    }
     
-    @IBAction func addAWordPressed(_ sender: UIButton) {
-        
-        
-        
+    func showWordModal(_ word: Dictionary<String, String> = [:]){
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "WordSaveViewController") as? WordSaveViewController?
+        {
+            if (!word.isEmpty) {
+                vc?.selectedWord = word
+            }
+            vc?.delegate = self
+            vc?.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+            present(vc!, animated: true, completion: nil)
+        }
+    }
+    
+    //MARK: AlertCustomWordAddingDelegate
+    func onWordSaved(_ word: Dictionary<String, String>) {
+        words.append(word)
+        wordsTableView.reloadData()
+        print(words)
     }
     
 }

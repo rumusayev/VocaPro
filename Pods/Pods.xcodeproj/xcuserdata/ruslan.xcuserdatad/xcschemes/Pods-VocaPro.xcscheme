@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0920"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D4CF2D1E7401D19135AE1AEEAAB87809"
+               BlueprintIdentifier = "922FEB3E03578D19B9EF1DCB8D096080"
                BuildableName = "Pods_VocaPro.framework"
                BlueprintName = "Pods-VocaPro"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D4CF2D1E7401D19135AE1AEEAAB87809"
+            BlueprintIdentifier = "922FEB3E03578D19B9EF1DCB8D096080"
             BuildableName = "Pods_VocaPro.framework"
             BlueprintName = "Pods-VocaPro"
             ReferencedContainer = "container:Pods.xcodeproj">

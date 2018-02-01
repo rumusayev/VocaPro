@@ -335,7 +335,11 @@
                         <viewLayoutGuide key="safeArea" id="Fe8-NX-Akp"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create a sheet" id="duA-Vb-luM">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="aBc-Nt-B9n"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="aBc-Nt-B9n">
+                            <connections>
+                                <action selector="saveSheetPressed:" destination="PmJ-qv-dra" id="91K-Rs-tgQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameOfSheetTF" destination="WHR-xb-lXj" id="Hmw-vW-zt8"/>

@@ -14,7 +14,7 @@ class Sheet: Object {
     @objc dynamic var sheetName : String = ""
     @objc dynamic var timeFrame : Double = 0.0
     @objc dynamic var sequence : Double = 0.0
-    let words = List<Word>()
+    var words = List<Word>()
     
     override class func primaryKey() -> String? {
         return "id"

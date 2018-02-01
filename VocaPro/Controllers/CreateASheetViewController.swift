@@ -9,7 +9,8 @@
 import UIKit
 import RealmSwift
 import SwipeCellKit
-
+import Toaster
+import UserNotifications
 
 
 class CreateASheetViewController: UIViewController, UITableViewDataSource, SwipeTableViewCellDelegate, AlertCustomWordAddingDelegate {
@@ -49,8 +50,6 @@ class CreateASheetViewController: UIViewController, UITableViewDataSource, Swipe
         
         let cell = wordsTableView.dequeueReusableCell(withIdentifier: "cellWord")  as! SwipeTableViewCell
         
-        print(words[indexPath.row])
-        
         cell.textLabel?.text = words[indexPath.row]["word"]
         
         cell.delegate = self
@@ -67,7 +66,8 @@ class CreateASheetViewController: UIViewController, UITableViewDataSource, Swipe
         guard orientation == .right else { return nil }
         
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
-            // handle action by updating model with deletion
+            self.words.remove(at: indexPath.row)
+            self.wordsTableView.reloadData()
         }
         
         // customize the action appearance
@@ -102,47 +102,6 @@ class CreateASheetViewController: UIViewController, UITableViewDataSource, Swipe
         
     }
     
-    func saveSheet(){
-        
-        let newSheet = Sheet()
-        newSheet.id = newSheet.incrementID()
-        newSheet.sheetName = "Week 1"
-        newSheet.timeFrame = 0.1
-        newSheet.sequence = 24
-        
-        do {
-            try realm.write {
-                realm.add(newSheet)
-            }
-        } catch {
-            print("Error while creating sheet \(error)")
-        }
-        
-    }
-    
-    func saveWords(){
-        
-        let sheet = realm.object(ofType: Sheet.self, forPrimaryKey: 1)
-        let newWord = Word()
-        
-        newWord.id = newWord.incrementID()
-        newWord.word = "Hello"
-        newWord.translation = "Привет"
-        newWord.transcription = "[hello:]"
-        newWord.example = "When she saying hello I loose my mind"
-        newWord.dateCreated = Date()
-        sheet?.words.append(newWord)
-        
-        do {
-            try realm.write {
-                realm.add(newWord)
-            }
-        } catch {
-            print("Error while creating words \(error)")
-        }
-        
-    }
-    
     @IBAction func addWordPressed(_ sender: UIButton)
     {
         showWordModal()
@@ -162,9 +121,116 @@ class CreateASheetViewController: UIViewController, UITableViewDataSource, Swipe
     
     //MARK: AlertCustomWordAddingDelegate
     func onWordSaved(_ word: Dictionary<String, String>) {
-        words.append(word)
+        
+        var update = false
+        
+        for (index, wordItem) in words.enumerated() {
+            if wordItem["word"] == word["word"] {
+                
+                update = true
+                words[index]["word"] = word["word"]
+                words[index]["translation"] = word["translation"]
+                words[index]["transcription"] = word["transcription"]
+                words[index]["example"] = word["example"]
+                
+            }
+        }
+        
+        if !update {
+            words.append(word)
+        }
+        
+        runToastNotificationSaveWord("Word Saved")
+        
         wordsTableView.reloadData()
-        print(words)
     }
     
+    func runToastNotificationSaveWord(_ text: String){
+        let appearance = ToastView.appearance()
+        appearance.backgroundColor = .lightGray
+        appearance.textColor = .black
+        appearance.font = .boldSystemFont(ofSize: 16)
+        appearance.textInsets = UIEdgeInsets(top: 15, left: 20, bottom: 15, right: 20)
+        appearance.bottomOffsetPortrait = 100
+        appearance.cornerRadius = 20
+        
+        let toast = Toast(text: text, delay: 0, duration: 1)
+        toast.show()
+    }
+    
+    @IBAction func saveSheetPressed(_ sender: UIBarButtonItem) {
+        
+        var errors = ""
+        
+        if (nameOfSheetTF.text?.isEmpty)! {
+            errors += "Name of sheet\n"
+        }
+        
+        if (timeFrameTF.text?.isEmpty)! {
+            errors += "Time frame\n"
+        }
+        
+        if (sequenceTF.text?.isEmpty)! {
+            errors += "Sequence\n"
+        }
+        
+        if words.isEmpty {
+            errors += "at least 1 word"
+        }
+        
+        if !errors.isEmpty{
+            runToastNotificationSaveWord("Please specify: \(errors)")
+        } else {
+            
+            saveSheet()
+            
+        }
+        
+    }
+    
+    func saveSheet(){
+        
+        let newSheet = Sheet()
+        newSheet.id = newSheet.incrementID()
+        newSheet.sheetName = nameOfSheetTF.text!
+        newSheet.timeFrame = Double(timeFrameTF.text!)!
+        newSheet.sequence = Double(sequenceTF.text!)!
+        
+        do {
+            try realm.write {
+                realm.add(newSheet)
+            }
+            
+        } catch {
+            print("Error while creating sheet \(error)")
+            fatalError()
+        }
+        
+        for word in words {
+            saveWords(word, newSheet)
+        }
+        
+    }
+    
+    func saveWords(_ word: Dictionary<String, String> = [:], _ sheet: Sheet){
+        
+        let newWord = Word()
+        
+        newWord.id = newWord.incrementID()
+        newWord.word = word["word"]!
+        newWord.translation = word["translation"]!
+        newWord.transcription = word["transcription"]!
+        newWord.example = word["example"]!
+        newWord.dateCreated = Date()
+        
+        do {
+            try realm.write {
+                realm.add(newWord)
+                sheet.words.append(newWord)
+            }
+        } catch {
+            print("Error while creating words \(error)")
+        }
+        
+    }
 }

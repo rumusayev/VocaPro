@@ -79,6 +79,7 @@
 				44061FDF2012B2E300184958 /* Info.plist */,
 				44548FFE20150E61003BFCD8 /* Plugins */,
 				44E66853201649A4009F5B64 /* Models */,
+				44ABF2F72020CB07006B800E /* Extensions */,
 			);
 			path = VocaPro;
 			sourceTree = "<group>";
@@ -97,6 +98,13 @@
 				44548FFA20150E34003BFCD8 /* DesignableHomeBtn.swift */,
 			);
 			path = Plugins;
+			sourceTree = "<group>";
+		};
+		44ABF2F72020CB07006B800E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		44BD97D92012C21B00D406CC /* Views */ = {
@@ -179,6 +187,11 @@
 					44061FCF2012B2E200184958 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
